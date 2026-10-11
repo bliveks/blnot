@@ -1,23 +1,24 @@
 # Notes App (MySQL)
 
-Simple notes app with session-based auth, CSRF protection, and MySQL storage.
+Sessiya əsaslı autentifikasiya, CSRF qoruması və MySQL yaddaşı olan sadə qeyd tətbiqi.
 
-## Requirements
+## Tələblər
 - PHP 7.4+
 - MySQL 5.7+ / MariaDB 10.3+
 - Apache/Nginx
 
-## Setup
-1. Copy `.env.example` to `.env`
-2. Fill MySQL credentials in `.env`
-3. Open the app in the browser
+## Quraşdırma
+1. `.env.example` faylını `.env` olaraq kopyalayın
+2. `.env` içindəki MySQL məlumatlarını doldurun
+3. `database.sql` dökümünü veritabanına import edin (yalnız `admin` istifadəçisi ilə)
+4. Tətbiqi brauzerdə açın
 
-On first run, the backend creates tables automatically:
+İlk işlətmədə backend avtomatik olaraq tabelləri yaradır:
 - `users`
 - `categories`
 - `notes`
 
-Users can only be created from the admin panel.
+İstifadəçilər yalnız admin paneli üzerinden yaradıla bilər.
 
 ## API
 - `GET functions.php?action=checkSession`
@@ -30,8 +31,9 @@ Users can only be created from the admin panel.
 - `GET functions.php?action=getUsers` (admin)
 - `POST functions.php?action=createUser` (admin)
 
-## Security
-- Session hardening (`HttpOnly`, `SameSite`, optional `Secure`)
-- CSRF token checks
-- Basic note input validation
-- Session files are denied by `sessions/.htaccess`
+## Təhlükəsizlik
+- Sessiya möhkəmləndirməsi (`HttpOnly`, `SameSite`, opsiyonel `Secure`)
+- CSRF token yoxlamaları
+- Sadə qeyd input doğrulaması
+- Sessiya faylları `sessions/.htaccess` ilə bağlanır
+- `.env` və yüklənən fayllar gitə daxil edilmir (`.gitignore`ya baxın)
