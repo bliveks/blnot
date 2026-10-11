@@ -1,0 +1,3 @@
+sess_*
+!.htaccess
+!.gitignore

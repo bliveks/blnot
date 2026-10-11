@@ -1,0 +1,18 @@
+# Ortam değişkenleri (gizli)
+.env
+
+# Yerel SQL dökümü (gerçek veriler içerir)
+qbigjpsu_q.sql
+
+# Yüklenen dosyalar
+uploads/*
+!uploads/.htaccess
+
+# Oturum dosyaları (sessions/.gitignore ile birlikte)
+logs/*
+!logs/.gitkeep
+!logs/.htaccess
+
+# Sistem dosyaları
+.DS_Store
+Thumbs.db
